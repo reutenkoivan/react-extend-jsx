@@ -1,0 +1,26 @@
+{
+  "name": "react-extend-jsx",
+  "version": "0.0.1",
+  "description": "React components for extend jsx syntax.",
+  "license": "MIT",
+  "author": "Ivan Reutenko",
+  "files": [
+    "README.md",
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "react": ">=17.0.2",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2"
+  },
+  "keywords": ["react", "jsx", "extend", "syntax"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/react-extend-jsx.git"
+  }
+}

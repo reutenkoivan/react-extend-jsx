@@ -1,0 +1,12 @@
+.cache
+node_modules/
+.idea
+.vscode
+npm-debug.log*
+.DS_Store
+lib
+*.sublime*
+*.log
+public
+
+tsconfig.tsbuildinfo
