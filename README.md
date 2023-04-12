@@ -1,6 +1,15 @@
 # react-extend-jsx [![Made in Ukraine](https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7)](https://stand-with-ukraine.pp.ua)
 
-## Installation
+- [Installation](#installation)
+- [Package structure](#package-structure)
+  - [Tree shakable imports](#tree-shakable-imports)
+  - [Universal imports](#universal-imports)
+- [Provided components](#provided-components)
+  - [Show](#show)
+  - [For](#for)
+  - [Switch](#switch)
+
+## Installation:
 
 ```bash
 npm add react-extend-jsx
@@ -10,9 +19,9 @@ npm add react-extend-jsx
 yarn add react-extend-jsx
 ```
 
-## Package structure
+## Package structure:
 
-### tree shakable imports
+### Tree shakable imports
 Import only what you need
 
 ```tsx
@@ -26,7 +35,7 @@ Import from the root of the package
 // TODO: import { Show } from 'react-extend-jsx'
 ```
 
-## Provided components
+## Provided components:
 
 ### Show
 
