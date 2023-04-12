@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { SwitchProps } from "./types";
+import { SwitchProps } from './types'
 
 const Switch = <T extends string>({
   case: caseProp,
