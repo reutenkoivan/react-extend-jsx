@@ -19,33 +19,24 @@ npm add react-extend-jsx
 yarn add react-extend-jsx
 ```
 
-## Package structure:
-
-### Tree shakable imports
-Import only what you need
-
-```tsx
-// TODO: import Show from 'react-extend-jsx/conditions/show'
-// TODO: import Switch from 'react-extend-jsx/conditions/switch'
-```
-
-```tsx
-// TODO: import For from 'react-extend-jsx/loops/for'
-```
-
-### Universal imports
-Import from the root of the package
-
-```tsx
-// TODO: import { Show } from 'react-extend-jsx'
-```
-
 ## Provided components:
 
 ### Show
 
 Conditional rendering component that renders `children` only when the `when` prop is truthy.
 Also, you can use `fallback` prop to render something while `when` is falsy.
+
+#### Imports:
+
+```tsx
+import Show from 'react-extend-jsx/conditions/show'
+```
+
+```tsx
+import { Show } from 'react-extend-jsx'
+```
+
+#### Examples:
 
 ```jsx
 import { useState } from 'react'
@@ -102,6 +93,18 @@ const GenericUsage = () => {
 Component that renders `children` for each item in the `of` prop.
 This component is similar to `Array.prototype.map` method.
 
+#### Imports:
+
+```tsx
+import For from 'react-extend-jsx/loops/for'
+```
+
+```tsx
+import { For } from 'react-extend-jsx'
+```
+
+#### Examples:
+
 ```tsx
 import { useState } from 'react'
 // TODO: import { For } from 'react-extend-jsx'
@@ -140,6 +143,18 @@ const SimpleUsage = () => {
 
 Conditional rendering component that renders some of the `children` depending on the `case` prop.
 Also, you can use `default` prop to render something while `case` is not equal to any `key` of the `children` object.
+
+#### Imports:
+
+```tsx
+import Switch from 'react-extend-jsx/conditions/switch'
+```
+
+```tsx
+import { Switch } from 'react-extend-jsx'
+```
+
+#### Examples:
 
 ```tsx
 // TODO: import { Switch } from 'react-extend-jsx'
