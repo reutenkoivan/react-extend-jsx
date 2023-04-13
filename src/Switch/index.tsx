@@ -14,7 +14,7 @@ const Switch = <T extends string>({
         const child = children[caseProp]
 
         if (child) {
-            return child as JSX.Element
+            return child
         }
 
         if (defaultProp) {

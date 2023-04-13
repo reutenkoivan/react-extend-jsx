@@ -33,6 +33,16 @@ import Show from 'react-extend-jsx/conditions/show'
 import { Show } from 'react-extend-jsx'
 ```
 
+#### Props:
+
+```tsx
+interface ShowProps<T> {
+    when: T
+    fallback?: JSX.Element
+    children?: T extends boolean ? JSX.Element : ((item: T) => JSX.Element) | JSX.Element
+}
+```
+
 #### Examples:
 
 ```jsx
@@ -100,6 +110,15 @@ import For from 'react-extend-jsx/loops/for'
 import { For } from 'react-extend-jsx'
 ```
 
+#### Props:
+
+```tsx
+interface ForProps<T> {
+    of: T[]
+    children: (item: T, index: number) => JSX.Element
+}
+```
+
 #### Examples:
 
 ```tsx
@@ -149,6 +168,16 @@ import Switch from 'react-extend-jsx/conditions/switch'
 
 ```tsx
 import { Switch } from 'react-extend-jsx'
+```
+
+#### Props:
+
+```tsx
+interface SwitchProps<T extends string> {
+  case: T
+  default?: JSX.Element
+  children: Partial<Record<T, JSX.Element>>
+}
 ```
 
 #### Examples:

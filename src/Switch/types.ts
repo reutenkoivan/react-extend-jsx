@@ -1,5 +1,5 @@
-export type SwitchProps<T extends string> = {
-    case: T | undefined | null
-    children: Partial<Record<T, JSX.Element>>
+export interface SwitchProps<T extends string> {
+    case: T
     default?: JSX.Element
+    children: Partial<Record<T, JSX.Element>>
 }
