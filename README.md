@@ -161,7 +161,7 @@ const B = () => <span>B</span>
 const C = () => <span>C</span>
 const D = () => <span>D</span>
 
-type StatusType = 'A' | 'B' | 'C'
+type StatusType = 'first' | 'second' | 'third'
 
 const SimpleUsage = ({ status }: { status?: StatusType }) => {
     const [componentID, _] = useState(status)
@@ -169,9 +169,9 @@ const SimpleUsage = ({ status }: { status?: StatusType }) => {
     return (
         <Switch case={componentID} default={<D />}>
             {{
-                A: <A />,
-                B: <B />,
-                C: <C />
+                first: <A />,
+                second: <B />,
+                third: <C />
             }}
         </Switch>
     )

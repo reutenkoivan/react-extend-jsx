@@ -7,6 +7,10 @@ const Switch = <T extends string>({
   children
 }: SwitchProps<T>): JSX.Element | null => {
     return useMemo(() => {
+        if (!caseProp) {
+            return defaultProp || null
+        }
+
         const child = children[caseProp]
 
         if (child) {
