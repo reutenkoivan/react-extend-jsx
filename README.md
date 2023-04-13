@@ -25,7 +25,12 @@ yarn add react-extend-jsx
 Import only what you need
 
 ```tsx
-// TODO: import Show from 'react-extend-jsx/Show'
+// TODO: import Show from 'react-extend-jsx/conditions/show'
+// TODO: import Switch from 'react-extend-jsx/conditions/switch'
+```
+
+```tsx
+// TODO: import For from 'react-extend-jsx/loops/for'
 ```
 
 ### Universal imports
