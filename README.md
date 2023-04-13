@@ -1,9 +1,6 @@
 # react-extend-jsx [![Made in Ukraine](https://img.shields.io/badge/made_in-ukraine-ffd700.svg?labelColor=0057b7)](https://stand-with-ukraine.pp.ua)
 
 - [Installation](#installation)
-- [Package structure](#package-structure)
-  - [Tree shakable imports](#tree-shakable-imports)
-  - [Universal imports](#universal-imports)
 - [Provided components](#provided-components)
   - [Show](#show)
   - [For](#for)
