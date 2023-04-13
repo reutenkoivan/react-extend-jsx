@@ -37,7 +37,7 @@ import { Show } from 'react-extend-jsx'
 
 ```jsx
 import { useState } from 'react'
-// TODO: import { Show } from 'react-extend-jsx'
+import { Show } from 'react-extend-jsx'
 
 const SimpleUsage = () => {
     const [isShow, setIsShow] = useState(false)
@@ -52,7 +52,7 @@ const SimpleUsage = () => {
 
 ```tsx
 import { useState, useEffect } from 'react'
-// TODO: import { Show } from 'react-extend-jsx'
+import { Show } from 'react-extend-jsx'
 
 type ItemType = {
     id: number
@@ -104,7 +104,7 @@ import { For } from 'react-extend-jsx'
 
 ```tsx
 import { useState } from 'react'
-// TODO: import { For } from 'react-extend-jsx'
+import { For } from 'react-extend-jsx'
 
 type ItemType = {
     id: number
@@ -154,29 +154,24 @@ import { Switch } from 'react-extend-jsx'
 #### Examples:
 
 ```tsx
-// TODO: import { Switch } from 'react-extend-jsx'
+import { Switch } from 'react-extend-jsx'
 
 const A = () => <span>A</span>
 const B = () => <span>B</span>
 const C = () => <span>C</span>
 const D = () => <span>D</span>
 
-const Components = {
-    A,
-    B,
-    C,
-    D
-}
+type StatusType = 'A' | 'B' | 'C'
 
-const SimpleUsage = ({ status = '' }: { status: keyof typeof Components }) => {
+const SimpleUsage = ({ status }: { status?: StatusType }) => {
     const [componentID, _] = useState(status)
 
     return (
-        <Switch case={componentID} default={<Components.D />}>
+        <Switch case={componentID} default={<D />}>
             {{
-                A: <Components.A />,
-                B: <Components.B />,
-                C: <Components.C />
+                A: <A />,
+                B: <B />,
+                C: <C />
             }}
         </Switch>
     )
