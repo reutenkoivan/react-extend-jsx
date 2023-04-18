@@ -9,4 +9,5 @@ lib
 *.log
 public
 
-tsconfig.tsbuildinfo
+# Build
+dist

@@ -1,4 +1,4 @@
-import { ShowProps } from "./types";
+import { ShowProps } from './types'
 
 const Show = <T,>({ children, fallback = null, when }: ShowProps<T>) => {
   if (when) {

@@ -1,3 +1,3 @@
-export * as For from './For'
-export * as Show from './Show'
-export * as Switch from './Switch'
+export { default as For } from './loops/For'
+export { default as Show } from './conditions/Show'
+export { default as Switch } from './conditions/Switch'
