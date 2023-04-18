@@ -1,7 +1,7 @@
 import React, { Fragment, Children } from 'react'
 import { ForProps } from './types'
 
-const For = <T,>({ children, of }: ForProps<T>) => {
+const For = <T,>({ children, of }: ForProps<T>): JSX.Element => {
   return (
     <Fragment>
       {Children.toArray(
