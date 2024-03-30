@@ -1,10 +1,10 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
 
 export type SwitchProps<T extends string> = {
-	case: T;
-	default?: ReactNode | ReactNode[];
-	children: Partial<Record<T, ReactNode>>;
-};
+	case: T
+	default?: ReactNode | ReactNode[]
+	children: Partial<Record<T, ReactNode>>
+}
 
 export const Switch = <T extends string>({
 	case: caseProp,
@@ -12,18 +12,18 @@ export const Switch = <T extends string>({
 	children,
 }: SwitchProps<T>): ReactNode | ReactNode[] => {
 	if (!caseProp) {
-		return defaultProp || null;
+		return defaultProp || null
 	}
 
-	const child = children[caseProp];
+	const child = children[caseProp]
 
 	if (child) {
-		return child;
+		return child
 	}
 
 	if (defaultProp) {
-		return defaultProp;
+		return defaultProp
 	}
 
-	return null;
-};
+	return null
+}
