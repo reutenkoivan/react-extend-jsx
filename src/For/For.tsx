@@ -1,4 +1,4 @@
-import { Children, Fragment, type ReactNode } from 'react'
+import { Children, Fragment, type ReactNode, memo } from 'react'
 
 export type ForProps<T> = {
 	of: T[] | readonly T[]
@@ -6,7 +6,7 @@ export type ForProps<T> = {
 	keyMapper?: (item: T, index?: number) => string | number
 }
 
-export const For = <T,>({ children, of, keyMapper }: ForProps<T>): ReactNode => {
+export const For = memo(<T,>({ children, of, keyMapper }: ForProps<T>): ReactNode => {
 	return (
 		<Fragment>
 			{Children.toArray(
@@ -18,4 +18,4 @@ export const For = <T,>({ children, of, keyMapper }: ForProps<T>): ReactNode => 
 			)}
 		</Fragment>
 	)
-}
+})
