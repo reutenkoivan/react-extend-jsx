@@ -9,7 +9,7 @@
 	"types": "dist/main.d.ts",
 	"files": ["README.md", "dist", "src", "LICENSE"],
 	"scripts": {
-		"build": "tsc && vite build",
+		"app:build": "tsc && vite build",
 		"lint": "biome lint ./",
 		"format": "biome format ./ --write",
 		"storybook": "storybook dev -p 3000",

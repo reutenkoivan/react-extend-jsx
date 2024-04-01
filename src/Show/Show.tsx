@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react'
-import type { TruthyValue } from '../types.ts'
+import type { TruthyValue } from '../types'
+import { genericMemo } from '../utils/genericMemo'
 
 export type ShowProps<T> = {
 	when: T
@@ -7,7 +8,7 @@ export type ShowProps<T> = {
 	children: FC<TruthyValue<T>> | ReactNode | ReactNode[]
 }
 
-export const Show = <T,>({ children, fallback = null, when }: ShowProps<T>): ReactNode | ReactNode[] => {
+const ShowComponent = <T,>({ children, fallback = null, when }: ShowProps<T>): ReactNode | ReactNode[] => {
 	if (!when) {
 		return fallback
 	}
@@ -18,3 +19,5 @@ export const Show = <T,>({ children, fallback = null, when }: ShowProps<T>): Rea
 
 	return children
 }
+
+export const Show = genericMemo(ShowComponent)

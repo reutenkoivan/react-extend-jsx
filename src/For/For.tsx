@@ -1,12 +1,31 @@
-import { Children, Fragment, type ReactNode, memo } from 'react'
+import { Children, Fragment, type ReactNode } from 'react'
+import type { OrNull } from '../types'
+import { genericMemo } from '../utils/genericMemo'
 
 export type ForProps<T> = {
-	of: T[] | readonly T[]
+	of: OrNull<T[] | readonly T[]>
 	children: (item: T, index?: number) => ReactNode | ReactNode[]
 	keyMapper?: (item: T, index?: number) => string | number
+	loading?: boolean
+	slots?: {
+		loading?: ReactNode | ReactNode[]
+		empty?: ReactNode | ReactNode[]
+	}
 }
 
-export const For = memo(<T,>({ children, of, keyMapper }: ForProps<T>): ReactNode => {
+const ForComponent = <T,>({ children, of, keyMapper, loading = false, slots = {} }: ForProps<T>): ReactNode => {
+	if (loading && slots.loading) {
+		return slots.loading
+	}
+
+	if (!of) {
+		return null
+	}
+
+	if (!of.length && slots.empty) {
+		return slots.empty
+	}
+
 	return (
 		<Fragment>
 			{Children.toArray(
@@ -18,4 +37,6 @@ export const For = memo(<T,>({ children, of, keyMapper }: ForProps<T>): ReactNod
 			)}
 		</Fragment>
 	)
-})
+}
+
+export const For = genericMemo(ForComponent)

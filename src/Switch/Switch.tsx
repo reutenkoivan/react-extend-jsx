@@ -1,4 +1,5 @@
-import { type ReactNode, memo } from 'react'
+import type { ReactNode } from 'react'
+import { genericMemo } from '../utils/genericMemo'
 
 export type SwitchProps<T extends string> = {
 	case: T
@@ -6,22 +7,26 @@ export type SwitchProps<T extends string> = {
 	children: Partial<Record<T, ReactNode>>
 }
 
-export const Switch = memo(
-	<T extends string>({ case: caseProp, default: defaultProp, children }: SwitchProps<T>): ReactNode | ReactNode[] => {
-		if (!caseProp) {
-			return defaultProp || null
-		}
+const SwitchComponent = <T extends string>({
+	case: caseProp,
+	default: defaultProp,
+	children,
+}: SwitchProps<T>): ReactNode | ReactNode[] => {
+	if (!caseProp) {
+		return defaultProp || null
+	}
 
-		const child = children[caseProp]
+	const child = children[caseProp]
 
-		if (child) {
-			return child
-		}
+	if (child) {
+		return child
+	}
 
-		if (defaultProp) {
-			return defaultProp
-		}
+	if (defaultProp) {
+		return defaultProp
+	}
 
-		return null
-	},
-)
+	return null
+}
+
+export const Switch = genericMemo(SwitchComponent)

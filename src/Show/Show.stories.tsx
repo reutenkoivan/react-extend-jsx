@@ -58,10 +58,7 @@ export const SimpleWithFallback = () => {
 }
 
 export const ServerResponse = () => {
-	type User = {
-		name: string
-		age: number
-	}
+	type User = { name: string; age: number }
 
 	const [isLoading, setIsLoading] = useState(false)
 	const [user, setUser] = useState<User | null>(null)
@@ -69,15 +66,14 @@ export const ServerResponse = () => {
 	const fetchUser = async () => {
 		setIsLoading(true)
 
+		// Simulate a server response
 		setTimeout(() => {
 			setIsLoading(false)
 			setUser({ name: 'John Doe', age: 30 })
 		}, 1000)
 	}
 
-	const resetUser = () => {
-		setUser(null)
-	}
+	const resetUser = () => setUser(null)
 
 	return (
 		<Stack gap={10}>
