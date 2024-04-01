@@ -1,13 +1,27 @@
-.cache
-node_modules/
-.idea
-.vscode
-npm-debug.log*
-.DS_Store
-lib
-*.sublime*
+# Logs
+logs
 *.log
-public
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Build
+node_modules
 dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*storybook.log
+storybook-static
