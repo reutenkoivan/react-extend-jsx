@@ -4,10 +4,10 @@ import { genericMemo } from '../utils/genericMemo'
 export type SwitchProps<T extends string> = {
 	case: T
 	default?: ReactNode | ReactNode[]
-	children: Partial<Record<T, ReactNode>>
+	children: Partial<Record<T, ReactNode | ReactNode[]>>
 }
 
-const SwitchComponent = <T extends string>({
+const SwitchMapComponent = <T extends string>({
 	case: caseProp,
 	default: defaultProp,
 	children,
@@ -29,4 +29,4 @@ const SwitchComponent = <T extends string>({
 	return null
 }
 
-export const Switch = genericMemo(SwitchComponent)
+export const SwitchMap = genericMemo(SwitchMapComponent)
